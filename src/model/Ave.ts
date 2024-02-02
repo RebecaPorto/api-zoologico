@@ -1,10 +1,9 @@
-class Ave extends Animal{
+class Ave extends Animal {
     private envergadura: number;
 
-    constructor(_envergadura: number, _nome: string, _idade: number, _genero: string){
+    constructor(_envergadura: number, _nome: string, _idade: number, _genero: string) {
         super(_nome, _idade, _genero);
         this.envergadura = _envergadura;
-
     }
 
     public getEnvergadura(): number {
@@ -14,5 +13,4 @@ class Ave extends Animal{
     public setEnvergadura(envergadura: number): void {
         this.envergadura = envergadura;
     }
-
-    }
+}
