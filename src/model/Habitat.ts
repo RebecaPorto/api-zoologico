@@ -1,12 +1,12 @@
 import { Animal } from "./Animal";
 
-export class Habitat{
-    private nome: string;
-    private listaAnimais: Array<Animal>;
+export class Habitat {
+    private nome: string; // Declaração de uma propriedade privada para armazenar o nome do habitat.
+    private listaAnimais: Array<Animal>; // Declaração de uma propriedade privada para armazenar uma lista de animais do habitat.
 
-    constructor(_nome: string, _listaAnimais: Array<Animal>){
-        this.nome = _nome;
-        this.listaAnimais = _listaAnimais;
+    constructor(_nome: string, _listaAnimais: Array<Animal>) {
+        this.nome = _nome; // Inicializa o nome do habitat com o valor fornecido.
+        this.listaAnimais = _listaAnimais; // Inicializa a lista de animais do habitat com a lista fornecida.
     }
 
     /**
@@ -14,19 +14,17 @@ export class Habitat{
      * 
      * @returns O nome do habitat.
      */
-
     public getNome(): string {
-        return this.nome;
+        return this.nome; // Método público para obter o nome do habitat.
     }
 
     /**
      * Define o nome do habitat.
      * 
-     * @param_nome O nome a ser atribuído ao habitat.
+     * @param _nome O nome a ser atribuído ao habitat.
      */
-
-    public setNome(_nome: string): void{
-        this.nome = _nome;
+    public setNome(_nome: string): void {
+        this.nome = _nome; // Método público para definir o nome do habitat.
     }
 
     /**
@@ -34,18 +32,16 @@ export class Habitat{
      * 
      * @returns A lista de animais do habitat.
      */
-
     public getListaAnimais(): Array<Animal> {
-        return this.listaAnimais;
+        return this.listaAnimais; // Método público para obter a lista de animais do habitat.
     }
 
     /**
      * Define a lista de animais do habitat.
      * 
-     * @param_listaAnimais A lista de animais a ser atribuída ao habitat.
+     * @param _listaAnimais A lista de animais a ser atribuída ao habitat.
      */
-
     public setListaAnimais(_listaAnimais: Array<Animal>): void {
-        this.listaAnimais = _listaAnimais;
+        this.listaAnimais = _listaAnimais; // Método público para definir a lista de animais do habitat.
     }
 }
