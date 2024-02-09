@@ -1,47 +1,60 @@
 import { Animal } from "./Animal";
 
+/**
+ * Classe que representa um habitat para animais.
+ */
 export class Habitat {
-    private nome: string; // Declaração de uma propriedade privada para armazenar o nome do habitat.
-    private listaAnimais: Array<Animal>; // Declaração de uma propriedade privada para armazenar uma lista de animais do habitat.
+    /**
+     * Propriedade privada que armazena o nome do habitat.
+     */
+    private nome: string;
 
+    /**
+     * Propriedade privada que armazena a lista de animais no habitat.
+     */
+    private listaAnimais: Array<Animal>;
+
+    /**
+     * Construtor da classe Habitat.
+     * @param _nome O nome do habitat.
+     * @param _listaAnimais A lista de animais no habitat.
+     */
     constructor(_nome: string, _listaAnimais: Array<Animal>) {
-        this.nome = _nome; // Inicializa o nome do habitat com o valor fornecido.
-        this.listaAnimais = _listaAnimais; // Inicializa a lista de animais do habitat com a lista fornecida.
+        // Inicializa as propriedades do habitat com os valores fornecidos.
+        this.nome = _nome;
+        this.listaAnimais = _listaAnimais;
     }
 
     /**
-     * Retorna o nome do habitat.
-     * 
+     * Obtém o nome do habitat.
      * @returns O nome do habitat.
      */
     public getNome(): string {
-        return this.nome; // Método público para obter o nome do habitat.
+        return this.nome;
     }
 
     /**
      * Define o nome do habitat.
-     * 
-     * @param _nome O nome a ser atribuído ao habitat.
+     * @param nome O nome a ser atribuído ao habitat.
      */
-    public setNome(_nome: string): void {
-        this.nome = _nome; // Método público para definir o nome do habitat.
+    public setNome(nome: string): void {
+        this.nome = nome;
     }
 
     /**
-     * Retorna a lista de animais do habitat.
-     * 
-     * @returns A lista de animais do habitat.
+     * Obtém a lista de animais no habitat.
+     * @returns A lista de animais no habitat.
      */
     public getListaAnimais(): Array<Animal> {
-        return this.listaAnimais; // Método público para obter a lista de animais do habitat.
+        return this.listaAnimais;
     }
 
     /**
-     * Define a lista de animais do habitat.
-     * 
+     * Define a lista de animais no habitat.
      * @param _listaAnimais A lista de animais a ser atribuída ao habitat.
      */
     public setListaAnimais(_listaAnimais: Array<Animal>): void {
-        this.listaAnimais = _listaAnimais; // Método público para definir a lista de animais do habitat.
+        // Atualiza a lista de animais no habitat com a lista fornecida.
+        this.listaAnimais = _listaAnimais;
     }
 }

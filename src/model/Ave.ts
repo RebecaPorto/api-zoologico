@@ -1,18 +1,45 @@
-import { Animal } from "./Animal"; // Importa a classe Animal do arquivo Animal.ts
+import { Animal } from "./Animal";
 
+/**
+ * Classe que representa uma Ave, uma extensão da classe Animal.
+ */
 export class Ave extends Animal {
-    private envergadura: number; // Declaração de uma propriedade privada para armazenar a envergadura da ave.
+    // Método estático (não relacionado ao objeto de instância) que não foi implementado.
+    static push(novaAve: Ave) {
+        throw new Error("Method not implemented.");
+    }
 
+    // Propriedade privada que armazena a envergadura da ave.
+    private envergadura: number;
+
+    /**
+     * Construtor da classe Ave.
+     * @param _envergadura A envergadura da ave.
+     * @param _nome O nome da ave.
+     * @param _idade A idade da ave.
+     * @param _genero O gênero da ave.
+     */
     constructor(_envergadura: number, _nome: string, _idade: number, _genero: string) {
-        super(_nome, _idade, _genero); // Chama o construtor da classe Animal, passando o nome, idade e gênero fornecidos.
-        this.envergadura = _envergadura; // Inicializa a envergadura da ave com o valor fornecido.
+        // Chama o construtor da classe pai (Animal) para inicializar as propriedades básicas.
+        super(_nome, _idade, _genero);
+        
+        // Inicializa a propriedade específica para Ave.
+        this.envergadura = _envergadura;
     }
 
-    public getEnvergadura(): number {
-        return this.envergadura; // Método público para obter a envergadura da ave.
+    /**
+     * Obtém a envergadura da ave.
+     * @returns A envergadura da ave.
+     */
+    public getEnvergdura(): number {
+        return this.envergadura;
     }
 
+    /**
+     * Define a envergadura da ave.
+     * @param envergadura A envergadura a ser atribuída à ave.
+     */
     public setEnvergadura(envergadura: number): void {
-        this.envergadura = envergadura; // Método público para definir a envergadura da ave.
+        this.envergadura = envergadura;
     }
 }

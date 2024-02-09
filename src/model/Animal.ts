@@ -1,36 +1,70 @@
+/**
+ * Classe que representa um Animal.
+ */
 export class Animal {
-    private nome: string; // Declaração de uma propriedade privada para armazenar o nome do animal.
-    private idade: number; // Declaração de uma propriedade privada para armazenar a idade do animal.
-    private genero: string; // Declaração de uma propriedade privada para armazenar o gênero do animal.
+    // Propriedades privadas que armazenam informações sobre o animal.
+    private nome: string;
+    private idade: number;
+    private genero: string;
 
+    /**
+     * Construtor da classe Animal.
+     * @param _nome O nome do animal.
+     * @param _idade A idade do animal.
+     * @param _genero O gênero do animal.
+     */
     constructor(_nome: string, _idade: number, _genero: string) {
-        this.nome = _nome; // Inicializa o nome do animal com o valor fornecido.
-        this.idade = _idade; // Inicializa a idade do animal com o valor fornecido.
-        this.genero = _genero; // Inicializa o gênero do animal com o valor fornecido.
+        // Inicializa as propriedades do animal com os valores fornecidos.
+        this.nome = _nome;
+        this.idade = _idade;
+        this.genero = _genero;
     }
 
+    /**
+     * Obtém o nome do animal.
+     * @returns O nome do animal.
+     */
     public getNome(): string {
-        return this.nome; // Método público para obter o nome do animal.
+        return this.nome;
     }
 
+    /**
+     * Define o nome do animal.
+     * @param nome O nome a ser atribuído ao animal.
+     */
     public setNome(nome: string): void {
-        this.nome = nome; // Método público para definir o nome do animal.
+        this.nome = nome;
     }
 
+    /**
+     * Obtém a idade do animal.
+     * @returns A idade do animal.
+     */
     public getIdade(): number {
-        return this.idade; // Método público para obter a idade do animal.
+        return this.idade;
     }
 
+    /**
+     * Define a idade do animal.
+     * @param idade A idade a ser atribuída ao animal.
+     */
     public setIdade(idade: number): void {
-        this.idade = idade; // Método público para definir a idade do animal.
+        this.idade = idade;
     }
 
+    /**
+     * Obtém o gênero do animal.
+     * @returns O gênero do animal.
+     */
     public getGenero(): string {
-        return this.genero; // Método público para obter o gênero do animal.
+        return this.genero;
     }
 
+    /**
+     * Define o gênero do animal.
+     * @param genero O gênero a ser atribuído ao animal.
+     */
     public setGenero(genero: string): void {
-        this.genero = genero; // Método público para definir o gênero do animal.
+        this.genero = genero;
     }
 }
-
