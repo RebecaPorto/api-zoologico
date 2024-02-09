@@ -1,18 +1,51 @@
 import { Animal } from "./Animal";
 
-export class Habitat extends Animal {
-    private lista_de_animais: string;
+class Habitat{
+    private nome: string;
+    private listaAnimais: Array<Animal>;
 
-    constructor(_lista_de_animais: string, _nome: string, _idade: number, _genero: string) {
-        super(_nome, _idade, _genero);
-        this.lista_de_animais = _lista_de_animais;
+    constructor(_nome: string, _listaAnimais: Array<Animal>){
+        this.nome = _nome;
+        this.listaAnimais = _listaAnimais;
     }
 
-    public getListaDeAnimais(): string {
-        return this.lista_de_animais;
+    /**
+     * Retorna o nome do habitat.
+     * 
+     * @returns O nome do habitat.
+     */
+
+    public getNome(): string {
+        return this.nome;
     }
 
-    public setListaDeAnimais(lista_de_animais: string): void {
-        this.lista_de_animais = lista_de_animais;
+    /**
+     * Define o nome do habitat.
+     * 
+     * @param_nome O nome a ser atribuído ao habitat.
+     */
+
+    public setNome(_nome: string): void{
+        this.nome = _nome;
+    }
+
+    /**
+     * Retorna a lista de animais do habitat.
+     * 
+     * @returns A lista de animais do habitat.
+     */
+
+    public getListaAnimais(): Array<Animal> {
+        return this.listaAnimais;
+    }
+
+    /**
+     * Define a lista de animais do habitat.
+     * 
+     * @param_listaAnimais A lista de animais a ser atribuída ao habitat.
+     */
+
+    public setListaAnimais(_listaAnimais: Array<Animal>): void {
+        this.listaAnimais = _listaAnimais;
     }
 }
