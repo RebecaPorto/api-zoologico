@@ -14,42 +14,54 @@ server.use(express.json());
 server.use(cors());
 
 server.get('/', (req, res) => {
-   let ave: Ave= new Ave(10, 'Calopsita', 11, 'Masculino');
-   let reptil: Reptil= new Reptil ('placóides', 'Cobra', 15, 'Masculino');
-   let mamifero: Mamifero= new Mamifero ('canguru', 'Julia', 12, 'Feminino');
+    // Criando instâncias de Ave, Reptil e Mamifero
+    let ave: Ave = new Ave(10, 'Calopsita', 11, 'Masculino');
+    let reptil: Reptil = new Reptil('placóides', 'Cobra', 15, 'Masculino');
+    let mamifero: Mamifero = new Mamifero('canguru', 'Julia', 12, 'Feminino');
 
-    res.json([ave,reptil, mamifero]);
+    // Retornando um JSON com as instâncias criadas
+    res.json([ave, reptil, mamifero]);
 });
 
-server.post('/ave', (req,res) => {
-    const{ envergadura, nome, idade, genero} = req.body;
-    let ave: Ave= new Ave(envergadura, nome, idade, genero);
+server.post('/ave', (req, res) => {
+    // Extraindo dados do corpo da requisição
+    const { envergadura, nome, idade, genero } = req.body;
+    // Criando uma nova instância de Ave
+    let ave: Ave = new Ave(envergadura, nome, idade, genero);
+    // Retornando a nova ave em formato JSON
     res.json(["A nova ave do zoologico é:", ave]);
 });
 
 server.post('/habitat', (req, res) => {
-    const {nome, animais}= req.body;
+    // Extraindo dados do corpo da requisição
+    const { nome, animais } = req.body;
+    // Criando uma nova instância de Habitat
     const habitat = new Habitat(nome, animais);
-    console.log(habitat)
+    console.log(habitat); // Exibindo o habitat no console para fins de depuração
+    // Respondendo com uma mensagem de sucesso em formato JSON
     res.status(200).json('Habitat criado');
 });
 
 server.post('/atracao', (req, res) => {
-    const {nome, habitat}= req.body;
+    // Extraindo dados do corpo da requisição
+    const { nome, habitat } = req.body;
+    // Criando uma nova instância de Atracao
     const atracao = new Atracao(nome, habitat);
-    console.log(atracao)
-    res.status(200).json('Atrção criada');
+    console.log(atracao); // Exibindo a atração no console para fins de depuração
+    // Respondendo com uma mensagem de sucesso em formato JSON
+    res.status(200).json('Atração criada');
 });
 
 server.post('/zoologico', (req, res) => {
-    const {nome, atracao}= req.body;
-    const zoo = new Zoologico (nome, atracao);
-    console.log(zoo);
-    res.status(200).json('Zoologico criado');
+    // Extraindo dados do corpo da requisição
+    const { nome, atracao } = req.body;
+    // Criando uma nova instância de Zoologico
+    const zoo = new Zoologico(nome, atracao);
+    console.log(zoo); // Exibindo o zoológico no console para fins de depuração
+    // Respondendo com uma mensagem de sucesso em formato JSON
+    res.status(200).json('Zoológico criado');
 });
 
-
-
 server.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
-})
+    console.log(`Servidor rodando em http://localhost:${port}`);
+});
