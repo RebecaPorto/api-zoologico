@@ -1,3 +1,4 @@
+
 import { globalAgent } from "http";
 import { Animal } from "./Animal";
 import { DatabaseModel } from "./DatabaseModel";
@@ -83,3 +84,7 @@ export class Reptil extends Animal {
         }
     }
 }
+
+
+
+
